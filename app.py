@@ -53,7 +53,7 @@ def insert_book(title: str, author: str, genre: str, published_date: str, rating
 def fetch_books(search_query: str = "", filter_genre: str = "すべて"):
     """書籍データを取得（検索・絞り込み対応）"""
     with get_connection() as conn:
-        query = "SELECT id, title, author, genre, published_date, rating, memo, created_at FROM books WHERE genre = '文学・小説'"
+        query = "SELECT id, title, author, genre, published_date, rating, memo, created_at FROM books WHERE 1=1"
         params = []
 
         if search_query:
